@@ -125,7 +125,7 @@ spotless {
     }
 }
 
-checkstyle {
-    toolVersion = '14.3.0'
-    configFile = rootProject.file('config/checkstyle/google_checks.xml')
-}
+// checkstyle {
+//     toolVersion = '14.3.0'
+//     configFile = rootProject.file('config/checkstyle/google_checks.xml')
+// }
