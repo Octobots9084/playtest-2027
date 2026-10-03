@@ -1,8 +1,8 @@
 plugins {
     id "java"
     id "edu.wpi.first.GradleRIO" version "2026.2.1"
-    id "checkstyle"
-
+    id "com.diffplug.spotless" version "8.10.1"
+    // id "checkstyle"  # not compatible with Java 17
 }
 
 // spotless, checkstyle, and standard JUnit require maven central
@@ -11,8 +11,8 @@ repositories {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_25
-    targetCompatibility = JavaVersion.VERSION_25
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 def ROBOT_MAIN_CLASS = "frc.robot.Main"
@@ -126,6 +126,6 @@ spotless {
 }
 
 // checkstyle {
-//     toolVersion = '14.3.0'
+//     toolVersion = '12.3.1'
 //     configFile = rootProject.file('config/checkstyle/google_checks.xml')
 // }
