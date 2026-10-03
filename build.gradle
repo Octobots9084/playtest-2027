@@ -1,6 +1,13 @@
 plugins {
     id "java"
     id "edu.wpi.first.GradleRIO" version "2026.2.1"
+    id "checkstyle"
+
+}
+
+// spotless, checkstyle, and standard JUnit require maven central
+repositories {
+    mavenCentral()
 }
 
 java {
@@ -104,4 +111,21 @@ wpi.java.configureTestTasks(test)
 // Configure string concat to always inline compile
 tasks.withType(JavaCompile) {
     options.compilerArgs.add '-XDstringConcat=inline'
+}
+
+
+spotless {
+    java {
+        // Enforces the standard Google Java Style Guide
+        googleJavaFormat()
+
+        removeUnusedImports()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+}
+
+checkstyle {
+    toolVersion = '14.3.0'
+    configFile = rootProject.file('config/checkstyle/google_checks.xml')
 }
