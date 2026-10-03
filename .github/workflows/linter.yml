@@ -14,7 +14,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v6
         with:
-          java-version: '25' # Change this to match your project's Java version if needed
+          java-version: '17' # Change this to match your project's Java version if needed
           distribution: 'temurin'
           cache: 'gradle'
 
@@ -52,7 +52,7 @@ jobs:
         uses: actions/setup-java@v6
         with:
           distribution: 'temurin'
-          java-version: '25' # Update to your project's Java version
+          java-version: '17' # Update to your project's Java version
           cache: 'gradle'
 
       - name: Run Gradle Build
